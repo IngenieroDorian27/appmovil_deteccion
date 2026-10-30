@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutImagenCompleta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1">
+
+
+    <ImageView
+        android:id="@+id/ivImagenCompleta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:contentDescription="Imagen completa" />
+
+    <TextView
+        android:id="@+id/tvCerrarImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toca la imagen para cerrar"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:background="#80000000"
+        android:padding="10dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+
+</FrameLayout>

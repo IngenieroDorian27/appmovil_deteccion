@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/layout_padding"
+    android:paddingEnd="@dimen/layout_padding"
+    android:paddingTop="@dimen/layout_padding"
+    android:paddingBottom="10dp"
+    android:background="@drawable/bg_degradadomenu"
+    tools:context=".shriavis.menuenfoques.MenuCapturasActivity">
+
+    <TextView
+        android:id="@+id/tvBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capturas"
+        android:textColor="@color/color11"
+        android:textSize="@dimen/header_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvNombreUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Analisis con IA"
+        android:textColor="@color/color11"
+        android:textSize="@dimen/header_text"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/tvBienvenido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivPerfil"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp" />
+
+    <ImageView
+        android:id="@+id/ivPerfil"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logobg"
+        android:padding="8dp"
+        android:background="@drawable/bg_icono_perfil"
+        android:drawableTint="@color/color_boton"
+        app:layout_constraintTop_toTopOf="@+id/tvBienvenido"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNombreUsuario"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInformacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información"
+        android:textColor="@color/color11"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <ScrollView
+        android:id="@+id/scrollMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/tvInformacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav">
+
+        <LinearLayout
+            android:id="@+id/layoutContenidoScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Tarjetas info -->
+            <LinearLayout
+                android:id="@+id/layoutTarjetas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="8dp">
+
+                <!-- Piscinas -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tarjeta"
+                    android:padding="@dimen/card_padding"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_icon_size"
+                        android:layout_height="@dimen/card_icon_size"
+                        android:src="@drawable/water"
+                        android:drawableTint="@color/color12"
+                        android:background="@drawable/bg_icono_tarjeta_morado"
+                        android:padding="6dp" />
+
+                    <TextView
+                        android:id="@+id/tvNumPiscinas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_number_text"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Piscinas"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_label_text"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Monitoreos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tarjeta"
+                    android:padding="@dimen/card_padding"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_icon_size"
+                        android:layout_height="@dimen/card_icon_size"
+                        android:src="@drawable/visibility"
+                        android:drawableTint="@color/color10"
+                        android:background="@drawable/bg_icono_tarjeta_azul"
+                        android:padding="6dp" />
+
+                    <TextView
+                        android:id="@+id/tvNumMonitoreos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_number_text"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hoy"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_label_text"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Notificaciones -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tarjeta"
+                    android:padding="@dimen/card_padding">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_icon_size"
+                        android:layout_height="@dimen/card_icon_size"
+                        android:src="@drawable/notification"
+                        android:drawableTint="@color/color6"
+                        android:background="@drawable/bg_icono_tarjeta_rojo"
+                        android:padding="6dp" />
+
+                    <TextView
+                        android:id="@+id/tvNumNotificaciones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_number_text"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alertas"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/card_label_text"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAccionesRapidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MENU ANALISIS IMAGENES"
+                android:textColor="@color/color11"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="24dp" />
+
+            <!-- Cambios Superficie -->
+            <LinearLayout
+                android:id="@+id/layoutSuperficieCapturar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_tarjeta"
+                android:padding="14dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:src="@drawable/photo_camera"
+                    android:drawableTint="@color/color_boton"
+                    android:background="@drawable/bg_icono_tarjeta_azul"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cambios Superficie"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_title_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monitorear piscina ahora"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_sub_text"
+                        android:alpha="0.7"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/color11"
+                    android:textSize="24sp"
+                    android:alpha="0.7" />
+            </LinearLayout>
+
+            <!-- Acumulacion Alimento -->
+            <LinearLayout
+                android:id="@+id/layoutAlimentoCaptura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_tarjeta"
+                android:padding="14dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:src="@drawable/photo_camera"
+                    android:drawableTint="@color/color6"
+                    android:background="@drawable/bg_icono_tarjeta_rojo"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acumulacion Alimento"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_title_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monitorear piscina ahora"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_sub_text"
+                        android:alpha="0.7"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/color11"
+                    android:textSize="24sp"
+                    android:alpha="0.7" />
+            </LinearLayout>
+
+            <!-- Presencia Espuma -->
+            <LinearLayout
+                android:id="@+id/layoutEspumaCaptura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_tarjeta"
+                android:padding="14dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:src="@drawable/photo_camera"
+                    android:drawableTint="@color/color12"
+                    android:background="@drawable/bg_icono_tarjeta_morado"
+                    android:padding="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Presencia Espuma"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_title_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monitorear piscina ahora"
+                        android:textColor="@color/color11"
+                        android:textSize="@dimen/action_sub_text"
+                        android:alpha="0.7"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textColor="@color/color11"
+                    android:textSize="24sp"
+                    android:alpha="0.7" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Nav -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottomnav_height"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:background="@color/color14"
+        android:paddingTop="4dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iconInicio"
+                android:layout_width="@dimen/bottomnav_icon"
+                android:layout_height="@dimen/bottomnav_icon"
+                android:src="@drawable/dashboard"
+                app:tint="@color/color11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/color11"
+                android:textStyle="bold"
+                android:textSize="@dimen/bottomnav_text"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navCapturar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iconCamera"
+                android:layout_width="@dimen/bottomnav_icon"
+                android:layout_height="@dimen/bottomnav_icon"
+                android:src="@drawable/photo_camera"
+                android:drawableTint="@color/color_boton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capturar"
+                android:textColor="@color/color_boton"
+                android:textSize="@dimen/bottomnav_text"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/navAlertas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/navAlert"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconAlert"
+                    android:layout_width="@dimen/bottomnav_icon"
+                    android:layout_height="@dimen/bottomnav_icon"
+                    android:src="@drawable/notification"
+                    android:drawableTint="@color/color11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alertas"
+                    android:textColor="@color/color11"
+                    android:textSize="@dimen/bottomnav_text"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/navBanner"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:background="@drawable/bg_icono_tarjeta_rojo_badge"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/navHistorial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iconHistorial"
+                android:layout_width="@dimen/bottomnav_icon"
+                android:layout_height="@dimen/bottomnav_icon"
+                android:src="@drawable/history"
+                android:drawableTint="@color/color11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Historial"
+                android:textColor="@color/color11"
+                android:textSize="@dimen/bottomnav_text"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

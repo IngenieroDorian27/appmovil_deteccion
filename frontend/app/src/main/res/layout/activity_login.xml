@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scrollLogin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bg_degradado">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding"
+        tools:context=".shriavis.LoginActivity">
+
+        <com.example.visionia.shriavis.efectos.ParticlesView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/Icono"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/logo_margin_top"
+            android:src="@drawable/logobg"
+            android:scaleType="fitCenter"
+            app:layout_constraintWidth_percent="0.65"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+            android:layout_marginTop="@dimen/input_margin_top"
+            android:background="@drawable/bg_input_rounded"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/account"
+            android:drawableTint="@color/color11"
+            android:hint="Usuario"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/color11"
+            android:textColorHint="@color/color11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Icono" />
+
+        <EditText
+            android:id="@+id/etContra"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+            android:layout_marginTop="@dimen/input_margin_top"
+            android:background="@drawable/bg_input_rounded"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/password"
+            android:drawableTint="@color/color11"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/color11"
+            android:textColorHint="@color/color11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginHorizontal="@dimen/input_margin_horizontal"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:layout_marginBottom="40dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etContra"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_boton"
+                android:backgroundTint="@null"
+                android:text="Ingresar"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.example.visionia.shriavis.efectos.GlowButtonBorder
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="2dp" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,48 @@
+
+# Entorno virtual de Python
+.venv/
+venv/
+env/
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Caché de Python
+__pycache__/
+_pycache_/
+*.py[cod]
+*$py.class
+
+# Configuración de editores/IDEs
+.idea/
+.vscode/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporales
+tmp/
+temp/
+*.tmp
+
+# Imágenes/videos locales de prueba
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.mov
+
+# Modelos IA pesados
+*.onnx
+*.engine
+
+# Cachés de librerías/modelos
+.cache/
+runs/

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardPiscina"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:background="@drawable/bg_degradadomenu"
+    app:cardBackgroundColor="@color/color2">
+
+    <LinearLayout
+        android:id="@+id/layoutItemPiscina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tvItemPiscina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre Piscina"
+            android:textColor="@color/color9"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItemUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubicación: Sin registrar"
+            android:textColor="@color/color9"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <ImageButton
+            android:id="@+id/btnUbicacion"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/location"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/color9"
+            android:layout_marginEnd="8dp" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

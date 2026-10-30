@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/bg_degradadomenu"
+    tools:context=".shriavis.menuenfoques.HistorialActivity">
+
+    <TextView
+        android:id="@+id/tvHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Historial"
+        android:textColor="@color/color11"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvDetalleHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detalle Historial"
+        android:textColor="@color/color11"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvHistorial"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp" />
+
+
+    <ImageView
+        android:id="@+id/ivPerfil"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logobg"
+        android:padding="8dp"
+        android:background="@drawable/bg_icono_perfil"
+        android:drawableTint="@color/color_boton"
+        app:layout_constraintTop_toTopOf="@+id/tvHistorial"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetalleHistorial"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/etBuscarPiscina"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Buscar por piscina..."
+        android:inputType="number"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/bg_boton"
+        android:textColor="@color/color1"
+        android:textColorHint="@color/color1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalleHistorial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistorial"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/etBuscarPiscina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:background="@color/color14"
+        android:paddingTop="8dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Inicio -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/dashboard"
+                android:drawableTint="@color/color_boton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/color11"
+                android:textSize="20sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Capturar -->
+        <LinearLayout
+            android:id="@+id/navCapturar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/photo_camera"
+                android:drawableTint="@color/color11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capturar"
+                android:textColor="@color/color11"
+                android:textSize="20sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <!-- Alertas con badge -->
+        <FrameLayout
+            android:id="@+id/navAlert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/navAlertas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/notification"
+                    android:drawableTint="@color/color11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alertas"
+                    android:textColor="@color/color11"
+                    android:textSize="20sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Badge rojo -->
+            <TextView
+                android:id="@+id/navBanner"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:background="@drawable/bg_icono_tarjeta_rojo_badge"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp" />
+        </FrameLayout>
+
+        <!-- Historial -->
+        <LinearLayout
+            android:id="@+id/navHistorial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/history"
+                app:tint="@color/color_boton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Historial"
+                android:textColor="@color/color_boton"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

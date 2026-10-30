@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardNotificacion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:background="@drawable/bg_degradadomenu"
+    app:cardBackgroundColor="@color/color2">
+
+    <LinearLayout
+        android:id="@+id/layoutItemNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tvItemPiscina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Piscina 5"
+            android:textColor="@color/color9"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItemResumen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado del monitoreo disponible"
+            android:textColor="@color/color9"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tvItemFechaHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2026-04-30 - 18:40:00"
+            android:textColor="@color/color9"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/tvItemEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendiente"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_boton"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
